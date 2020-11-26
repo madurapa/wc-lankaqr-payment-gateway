@@ -31,12 +31,12 @@ Like WooCommerce LANKAQR Gateway plugin? Consider leaving a [5 star review](http
 * Avoid Payment Gateway Fees.
 * Direct Payment.
 * Send QR Code link to Customer.
-* 24x7 Availibilty.
-* Multisite Network Supproted.
+* 24x7 Availability.
+* Multisite Network Supported.
 
 #### Fees And Charges (Refer CBSL circulars below)
 * [Circular No. 02 of 2019 Establishment of a National Quick Response Code Standard for Local Payments](https://www.lankaclear.com/assets/images/products/products-and-services/lankaqr/circular-no-02-of-2019-lankaqr.pdf)
-* [Circular No. 02 of 2019 Establishment of a National Quick Response Code Standard for Local Payments - Addendum 1] (https://www.lankaclear.com/assets/images/products/products-and-services/lankaqr/circular-no-02-of-2019-lankaqr-addendum-1.pdf)
+* [Circular No. 02 of 2019 Establishment of a National Quick Response Code Standard for Local Payments - Addendum 1](https://www.lankaclear.com/assets/images/products/products-and-services/lankaqr/circular-no-02-of-2019-lankaqr-addendum-1.pdf)
 
 #### Supported Banks or Finance companies
 * Bank of Ceylon - Not Yet
@@ -91,9 +91,9 @@ Go to 'WooCommerce > Settings > Payments > LANKAQR', enable/disable options as p
 
 Yes, this plugin is compatible with any theme.
 
-= The plugin isn't working or have a bug? =
+= The plugin isn't working or has a bug? =
 
-Post detailed information about the issue in the [support forum](https://wordpress.org/support/plugin/woocommerce-gateway-lankaqr) and I will work to fix it.
+Post detailed information about the issue in the [support forum](https://wordpress.org/support/plugin/woocommerce-gateway-lankaqr) or [GitHub](https://github.com/madurapa/woocommerce-gateway-lankaqr/issues)
 
 == Screenshots ==
 
@@ -105,4 +105,5 @@ Post detailed information about the issue in the [support forum](https://wordpre
 == Changelog ==
 
 If you like WooCommerce LANKAQR Gateway, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/woocommerce-gateway-lankaqr/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
+
 
