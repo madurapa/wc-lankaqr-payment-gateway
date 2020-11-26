@@ -1,0 +1,197 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+#js_qrcode {
+    /*display: none !important*/
+}
+
+.lankaqr-js-qrcode {
+    /*margin-bottom: 30px;*/
+}
+
+.lankaqr-logo {
+    background-color: #251f3b;
+    padding: 20px 0;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.lankaqr-logo img {
+    width: 100px;
+    display: inline-block;
+    margin: auto;
+}
+
+.lankaqr-logo-footer {
+    padding: 10px 0;
+    background-color: #cbc3e8;
+    margin-top: 30px;
+}
+
+.lankaqr-logo-footer img {
+    width: 200px;
+    margin: auto;
+    display: inline-block;
+}
+
+#lankaqr-qrcode {
+    max-width: 252px;
+    max-height: 252px;
+    margin: 0 auto
+}
+
+#lankaqr-qrcode img {
+    margin: 0 auto;
+    border: 1px solid #ccc
+}
+
+#lankaqr-description {
+    text-transform: none;
+    font-size: 14px;
+    width: 80%;
+    margin: auto;
+}
+
+.lankaqr-clear {
+    margin: 8px 0 !important
+}
+
+.lankaqr-clear-area {
+    margin: 5px 0 !important
+}
+
+.lankaqr-form-group {
+    margin-top: 15px;
+}
+
+.lankaqr-form-group input {
+    width: 100%;
+    max-width: 220px !important;
+    text-align: center !important;
+    border-radius: 5px !important;
+    margin: auto;
+    display: inline-block;
+    vertical-align: bottom
+}
+
+.lankaqr-form-group select {
+    width: 25%;
+    border-radius: 5px !important;
+    display: inline-block;
+    vertical-align: sub
+}
+
+.lankaqr-buttons {
+    margin-top: 20px;
+}
+
+span.lankaqr-required {
+    color: red
+}
+
+.lankaqr-order-total {
+    font-weight: 700;
+    font-size: 12px;
+    margin: 3px 0 12px 0
+}
+
+.lankaqr-code-id {
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0 0 3px 0
+}
+
+.lankaqr-confirm-text {
+    font-size: 14px
+}
+
+.jconfirm-box,
+.jconfirm.jconfirm-dark .jconfirm-box .jconfirm-buttons,
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons {
+    text-align: center !important;
+    float: none !important
+}
+
+.jconfirm-buttons button {
+    font-size: 12px !important
+}
+
+.lankaqr-info {
+    display: block;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #251f3b;
+    border-image: initial;
+    max-width: 800px;
+    margin: auto;
+    background-color: #f1eefd
+}
+
+.lankaqr-waiting-text {
+    text-transform: uppercase;
+    color: #5a5a5a;
+    font-size: 13px
+}
+
+.lankaqr-dark-input {
+    color: #fff !important
+}
+
+.lankaqr-error-text {
+    margin: 5px;
+    background-color: #f8d7da;
+    color: red;
+    padding: 4px 20px;
+    display: inline-block;
+}
+
+.lankaqr-form-group input.has-error {
+    border: 1px solid red;
+    color: red;
+}
+
+.lankaqr-counter-content {
+    vertical-align: middle;
+    margin-top: 20px;
+}
+
+.lankaqr-counter {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 5px;
+    min-width: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #1E90FF;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+    .jconfirm-title {
+        font-size: 18px !important
+    }
+
+    .jconfirm-buttons button {
+        font-size: 11px !important
+    }
+
+    .lankaqr-confirm-text,
+    .lankaqr-description {
+        font-size: 11px !important;
+        width: 100% !important;
+    }
+
+    #lankaqr-handle,
+    #lankaqr-id,
+    #lankaqr-transaction-number {
+        width: 80% !important;
+        display: inline-block
+    }
+
+    #lankaqr-form label {
+        font-size: 13px !important
+    }
+}
