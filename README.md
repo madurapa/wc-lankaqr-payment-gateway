@@ -42,6 +42,7 @@ Like WooCommerce LANKAQR Gateway plugin? Consider leaving a [5 star review](http
 * NDB Bank - Not Yet
 * LB Finance - Not Yet
 * People’s Leasing & Finance - Not Yet
+
 (currently only commercial bank is supported and will support others upon the request)
 
 #### Compatibility
