@@ -3,7 +3,7 @@
 /**
  * The admin-facing functionality of the plugin.
  *
- * @package    WooCommerce LANKAQR Gateway
+ * @package    LANKAQR Payment Gateway for WooCommerce
  * @subpackage Includes
  * @author     Maduka Jayalath
  */
@@ -25,15 +25,15 @@ function lankaqrwc_rating_admin_notice()
     $no_thanks = wp_nonce_url(add_query_arg('lankaqrwc_rating_notice_action', 'no_thanks_rating_true'), 'lankaqrwc_no_thanks_rating_true'); ?>
 
     <div class="notice notice-success">
-        <p><?php _e('Hey, we noticed you\'ve been using WooCommerce LANKAQR Gateway for more than 2 week – that’s awesome! Could you please do me a BIG favor and give it a <strong>5-star</strong> rating on WordPress? Just to help me spread the word and boost my motivation.', 'woocommerce-gateway-lankaqr'); ?></p>
+        <p><?php _e('Hey, we noticed you\'ve been using LANKAQR Payment Gateway for WooCommerce for more than 2 week – that’s awesome! Could you please do me a BIG favor and give it a <strong>5-star</strong> rating on WordPress? Just to help me spread the word and boost my motivation.', 'lankaqr-payment-gateway-for-woocommerce'); ?></p>
         <p>
-            <a href="https://wordpress.org/support/plugin/woocommerce-gateway-lankaqr/reviews/?filter=5#new-post"
+            <a href="https://wordpress.org/support/plugin/lankaqr-payment-gateway-for-woocommerce/reviews/?filter=5#new-post"
                target="_blank"
-               class="button button-secondary"><?php _e('Ok, you deserve it', 'woocommerce-gateway-lankaqr'); ?></a>&nbsp;
+               class="button button-secondary"><?php _e('Ok, you deserve it', 'lankaqr-payment-gateway-for-woocommerce'); ?></a>&nbsp;
             <a href="<?php echo $dismiss; ?>"
-               class="already-did"><strong><?php _e('I already did', 'woocommerce-gateway-lankaqr'); ?></strong></a>&nbsp;<strong>|</strong>
+               class="already-did"><strong><?php _e('I already did', 'lankaqr-payment-gateway-for-woocommerce'); ?></strong></a>&nbsp;<strong>|</strong>
             <a href="<?php echo $no_thanks; ?>"
-               class="later"><strong><?php _e('Nope&#44; maybe later', 'woocommerce-gateway-lankaqr'); ?></strong></a>
+               class="later"><strong><?php _e('Nope&#44; maybe later', 'lankaqr-payment-gateway-for-woocommerce'); ?></strong></a>
     </div>
     <?php
 }

@@ -2,7 +2,7 @@
 /**
  * The admin-facing functionality of the plugin.
  *
- * @package    WooCommerce LANKAQR Gateway
+ * @package    LANKAQR Payment Gateway for WooCommerce
  * @subpackage Includes
  * @author     Maduka Jayalath
  */
@@ -39,9 +39,9 @@ function lankaqrwc_payment_gateway_init()
             $this->id = 'wc-mj-lankaqr';
             $this->has_fields = false;
             $this->supports = array('refunds');
-            $this->method_title = __('LANKAQR', 'woocommerce-gateway-lankaqr');
-            $this->method_description = __('Take payments via LANKAQR to your bank account directly.', 'woocommerce-gateway-lankaqr');
-            $this->order_button_text = __('Generate QR Code', 'woocommerce-gateway-lankaqr');
+            $this->method_title = __('LANKAQR', 'lankaqr-payment-gateway-for-woocommerce');
+            $this->method_description = __('Take payments via LANKAQR to your bank account directly.', 'lankaqr-payment-gateway-for-woocommerce');
+            $this->order_button_text = __('Generate QR Code', 'lankaqr-payment-gateway-for-woocommerce');
 
             // Method with all the options fields
             $this->init_form_fields();
@@ -183,7 +183,7 @@ function lankaqrwc_payment_gateway_init()
                 ?>
                 <div class="inline error">
                     <p>
-                        <strong><?php esc_html_e('Gateway disabled', 'woocommerce-gateway-lankaqr'); ?></strong>: <?php _e('LANKAQR doesn\'t support your store currency, set it to Sri Lankan Rupee (Rs)', 'woocommerce-gateway-lankaqr'); ?>
+                        <strong><?php esc_html_e('Gateway disabled', 'lankaqr-payment-gateway-for-woocommerce'); ?></strong>: <?php _e('LANKAQR doesn\'t support your store currency, set it to Sri Lankan Rupee (Rs)', 'lankaqr-payment-gateway-for-woocommerce'); ?>
                     </p>
                 </div>
                 <?php
@@ -198,188 +198,188 @@ function lankaqrwc_payment_gateway_init()
 
             $this->form_fields = array(
                 'enabled' => array(
-                    'title' => __('Enable/Disable:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Enable/Disable:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'checkbox',
-                    'label' => __('Enable LANKAQR Payment', 'woocommerce-gateway-lankaqr'),
-                    'description' => __('Enable this if you want to collect payment via LANKAQR.', 'woocommerce-gateway-lankaqr'),
+                    'label' => __('Enable LANKAQR Payment', 'lankaqr-payment-gateway-for-woocommerce'),
+                    'description' => __('Enable this if you want to collect payment via LANKAQR.', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => 'yes',
                     'desc_tip' => true,
                 ),
                 'title' => array(
-                    'title' => __('Title:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Title:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('This controls the title for the payment method the customer sees during checkout.', 'woocommerce-gateway-lankaqr'),
-                    'default' => __('Pay with LANKAQR', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('This controls the title for the payment method the customer sees during checkout.', 'lankaqr-payment-gateway-for-woocommerce'),
+                    'default' => __('Pay with LANKAQR', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                 ),
                 'description' => array(
-                    'title' => __('Description:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Description:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'textarea',
-                    'description' => __('Payment method description that the customer will see on your checkout.', 'woocommerce-gateway-lankaqr'),
-                    'default' => __('Make payment using LANKA QR, VISA QR or Mastercard QR', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Payment method description that the customer will see on your checkout.', 'lankaqr-payment-gateway-for-woocommerce'),
+                    'default' => __('Make payment using LANKA QR, VISA QR or Mastercard QR', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                 ),
                 'instructions' => array(
-                    'title' => __('Instructions:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Instructions:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'textarea',
-                    'description' => __('Instructions that will be added to the order pay page and emails.', 'woocommerce-gateway-lankaqr'),
-                    'default' => __('Please scan the above QR Code with any of LANKA QR, VISA QR or MasterCard QR mobile apps before the timeout is reached. After successful payment has been made through your QR mobile app you will be redirected to the order completed page automatically.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Instructions that will be added to the order pay page and emails.', 'lankaqr-payment-gateway-for-woocommerce'),
+                    'default' => __('Please scan the above QR Code with any of LANKA QR, VISA QR or MasterCard QR mobile apps before the timeout is reached. After successful payment has been made through your QR mobile app you will be redirected to the order completed page automatically.', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                 ),
                 'thank_you' => array(
-                    'title' => __('Thank You Message:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Thank You Message:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'textarea',
-                    'description' => __('This displays a message to customer after a successful payment is made.', 'woocommerce-gateway-lankaqr'),
-                    'default' => __('Thank you for your payment. Your transaction has been completed, and your order has been successfully placed. Please check you Email inbox for details. Please check your bank account statement to view transaction details.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('This displays a message to customer after a successful payment is made.', 'lankaqr-payment-gateway-for-woocommerce'),
+                    'default' => __('Thank you for your payment. Your transaction has been completed, and your order has been successfully placed. Please check you Email inbox for details. Please check your bank account statement to view transaction details.', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                 ),
                 'timeout_duration' => array(
-                    'title' => __('Timeout Duration:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Timeout Duration:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'select',
-                    'description' => __('Change this if you think you need to give more or less time for customers to make payments. Recommended value is 3 minutes.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Change this if you think you need to give more or less time for customers to make payments. Recommended value is 3 minutes.', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                     'default' => 3,
                     'options' => apply_filters('lankaqrwc_settings_timeout_duration', array(
-                        1 => __('1 minute', 'woocommerce-gateway-lankaqr'),
-                        2 => __('2 minutes', 'woocommerce-gateway-lankaqr'),
-                        3 => __('3 minutes', 'woocommerce-gateway-lankaqr'),
-                        4 => __('4 minutes', 'woocommerce-gateway-lankaqr'),
-                        5 => __('5 minutes', 'woocommerce-gateway-lankaqr')
+                        1 => __('1 minute', 'lankaqr-payment-gateway-for-woocommerce'),
+                        2 => __('2 minutes', 'lankaqr-payment-gateway-for-woocommerce'),
+                        3 => __('3 minutes', 'lankaqr-payment-gateway-for-woocommerce'),
+                        4 => __('4 minutes', 'lankaqr-payment-gateway-for-woocommerce'),
+                        5 => __('5 minutes', 'lankaqr-payment-gateway-for-woocommerce')
                     ))
                 ),
                 'lankaqr_parameters' => array(
-                    'title' => __('LANKAQR Configuration', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('LANKAQR Configuration', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'title',
-                    'description' => __('Merchants should ensure they have below listed parameters before initiating integration. These values will be provided by Bank during initiation of merchant integration / merchant configuration.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Merchants should ensure they have below listed parameters before initiating integration. These values will be provided by Bank during initiation of merchant integration / merchant configuration.', 'lankaqr-payment-gateway-for-woocommerce'),
                 ),
                 'institution_id' => array(
-                    'title' => __('Institution ID', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Institution ID', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Enter Institution ID provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Institution ID provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'channeluser_id' => array(
-                    'title' => __('Channel User ID', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Channel User ID', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Enter Channel User ID provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Channel User ID provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'channel_pass' => array(
-                    'title' => __('Channel Password', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Channel Password', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'textarea',
-                    'description' => __('Enter Channel Password provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Channel Password provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'merlogin_id' => array(
-                    'title' => __('Merchant Login ID', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Merchant Login ID', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Enter Merchant Login ID provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Merchant Login ID provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'merlogin_pass' => array(
-                    'title' => __('Merchant Password', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Merchant Password', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Enter Merchant Password provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Merchant Password provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'mid' => array(
-                    'title' => __('Merchant ID', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Merchant ID', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Enter Merchant ID provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Merchant ID provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'tid' => array(
-                    'title' => __('Terminal ID', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Terminal ID', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Enter Terminal ID provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Terminal ID provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'check_value' => array(
-                    'title' => __('Checksum Key', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Checksum Key', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Enter Checksum Key provided by Bank', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enter Checksum Key provided by Bank', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => '',
                     'desc_tip' => true,
                 ),
                 'push_notification' => array(
-                    'title' => __('Push Notification', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Push Notification', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'title',
-                    'description' => sprintf(__('You must share this URL <strong style="background-color:#ddd;">&nbsp;%s&nbsp;</strong> with <strong style="background-color:#ddd;">&nbsp;param1&nbsp;</strong> and <strong style="background-color:#ddd;">&nbsp;param2&nbsp;</strong> values in the below to the bank when you request a merchant account. This required to complete the payment process smoothly. You can change the pre-populated values below as you wish.', 'woocommerce-gateway-lankaqr'), add_query_arg('wc-api', 'wc_lankaqr', trailingslashit(get_home_url()))),
+                    'description' => sprintf(__('You must share this URL <strong style="background-color:#ddd;">&nbsp;%s&nbsp;</strong> with <strong style="background-color:#ddd;">&nbsp;param1&nbsp;</strong> and <strong style="background-color:#ddd;">&nbsp;param2&nbsp;</strong> values in the below to the bank when you request a merchant account. This required to complete the payment process smoothly. You can change the pre-populated values below as you wish.', 'lankaqr-payment-gateway-for-woocommerce'), add_query_arg('wc-api', 'wc_lankaqr', trailingslashit(get_home_url()))),
                 ),
                 'param1' => array(
-                    'title' => __('param1 (username)', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('param1 (username)', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('User Name for Push Notification', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('User Name for Push Notification', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => $this->generate_random_string(12, false, 'lu'),
                     'desc_tip' => true,
                 ),
                 'param2' => array(
-                    'title' => __('param2 (password)', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('param2 (password)', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
-                    'description' => __('Password for Push Notification', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Password for Push Notification', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => $this->generate_random_string(16, false, 'luds'),
                     'desc_tip' => true,
                 ),
                 'testing' => array(
-                    'title' => __('Gateway Testing', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Gateway Testing', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'title',
-                    'description' => __('Place the payment gateway in test mode using test keys provided by the bank.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Place the payment gateway in test mode using test keys provided by the bank.', 'lankaqr-payment-gateway-for-woocommerce'),
                 ),
                 'test_mode' => array(
-                    'title' => __('Test Mode', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Test Mode', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'checkbox',
-                    'label' => __('Enable Test Mode', 'woocommerce-gateway-lankaqr'),
+                    'label' => __('Enable Test Mode', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => 'no',
-                    'description' => __('Test mode enables you to test payments before go live. If you ready to start receiving payment on your site, kindly uncheck this.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Test mode enables you to test payments before go live. If you ready to start receiving payment on your site, kindly uncheck this.', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                 ),
                 'debug_mode' => array(
-                    'title' => __('Debug Mode', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Debug Mode', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'checkbox',
-                    'label' => __('Enable Debug Mode', 'woocommerce-gateway-lankaqr'),
+                    'label' => __('Enable Debug Mode', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => 'no',
-                    'description' => __('Debug mode enables you to get more information. Please uncheck this on production sites as there will be sensitive information will be exposed to the outside.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Debug mode enables you to get more information. Please uncheck this on production sites as there will be sensitive information will be exposed to the outside.', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                 ),
                 'email' => array(
-                    'title' => __('Configure Email', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Configure Email', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'title',
-                    'description' => __('Enable this option if you want to send a pending order email notification to customer when they started to paying via LANKAQR.', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('Enable this option if you want to send a pending order email notification to customer when they started to paying via LANKAQR.', 'lankaqr-payment-gateway-for-woocommerce'),
                 ),
                 'email_enabled' => array(
-                    'title' => __('Enable/Disable:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Enable/Disable:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'checkbox',
-                    'label' => __('Enable Additional Email Notification', 'woocommerce-gateway-lankaqr'),
-                    'description' => __('Enable this option if you want to send payment link to the customer via email after started placing the order.', 'woocommerce-gateway-lankaqr'),
+                    'label' => __('Enable Additional Email Notification', 'lankaqr-payment-gateway-for-woocommerce'),
+                    'description' => __('Enable this option if you want to send payment link to the customer via email after started placing the order.', 'lankaqr-payment-gateway-for-woocommerce'),
                     'default' => 'yes',
                     'desc_tip' => true,
                 ),
                 'email_subject' => array(
-                    'title' => __('Email Subject:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Email Subject:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
                     'desc_tip' => true,
-                    'description' => sprintf(__('Available placeholders: %s', 'woocommerce-gateway-lankaqr'), '<code>' . esc_html('{site_title}, {site_address}, {order_date}, {order_number}') . '</code>'),
-                    'default' => __('[{site_title}]: Payment pending #{order_number}', 'woocommerce-gateway-lankaqr'),
+                    'description' => sprintf(__('Available placeholders: %s', 'lankaqr-payment-gateway-for-woocommerce'), '<code>' . esc_html('{site_title}, {site_address}, {order_date}, {order_number}') . '</code>'),
+                    'default' => __('[{site_title}]: Payment pending #{order_number}', 'lankaqr-payment-gateway-for-woocommerce'),
                 ),
                 'email_heading' => array(
-                    'title' => __('Email Heading:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Email Heading:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'text',
                     'desc_tip' => true,
-                    'description' => sprintf(__('Available placeholders: %s', 'woocommerce-gateway-lankaqr'), '<code>' . esc_html('{site_title}, {site_address}, {order_date}, {order_number}') . '</code>'),
-                    'default' => __('Thank you for your order', 'woocommerce-gateway-lankaqr'),
+                    'description' => sprintf(__('Available placeholders: %s', 'lankaqr-payment-gateway-for-woocommerce'), '<code>' . esc_html('{site_title}, {site_address}, {order_date}, {order_number}') . '</code>'),
+                    'default' => __('Thank you for your order', 'lankaqr-payment-gateway-for-woocommerce'),
                 ),
                 'additional_content' => array(
-                    'title' => __('Email Body Additional Text:', 'woocommerce-gateway-lankaqr'),
+                    'title' => __('Email Body Additional Text:', 'lankaqr-payment-gateway-for-woocommerce'),
                     'type' => 'textarea',
-                    'description' => __('This text will be attached to the On Hold email template sent to customer. Use {lanka_qr_pay_link} to add the link of payment page.', 'woocommerce-gateway-lankaqr'),
-                    'default' => __('Please complete the payment via LANKAQR by clicking this link: {lanka_qr_pay_link} (ignore if already done).', 'woocommerce-gateway-lankaqr'),
+                    'description' => __('This text will be attached to the On Hold email template sent to customer. Use {lanka_qr_pay_link} to add the link of payment page.', 'lankaqr-payment-gateway-for-woocommerce'),
+                    'default' => __('Please complete the payment via LANKAQR by clicking this link: {lanka_qr_pay_link} (ignore if already done).', 'lankaqr-payment-gateway-for-woocommerce'),
                     'desc_tip' => true,
                 )
             );
@@ -414,7 +414,7 @@ function lankaqrwc_payment_gateway_init()
             $order->update_status($this->default_status);
 
             // add some order notes
-            $order->add_order_note(apply_filters('lankaqrwc_process_payment_note', __('Awaiting LANKAQR Payment...', 'woocommerce-gateway-lankaqr'), $order), false);
+            $order->add_order_note(apply_filters('lankaqrwc_process_payment_note', __('Awaiting LANKAQR Payment...', 'lankaqr-payment-gateway-for-woocommerce'), $order), false);
 
             // update meta
             update_post_meta($order->get_id(), '_lankaqrwc_order_paid', 'no');
@@ -467,7 +467,7 @@ function lankaqrwc_payment_gateway_init()
                     'ajaxurl' => admin_url('admin-ajax.php'),
                     'order_id' => $order_id,
                     'order_key' => $order->get_order_key(),
-                    'processing_text' => apply_filters('lankaqrwc_payment_processing_text', __('Please wait while we are processing your request...', 'woocommerce-gateway-lankaqr')),
+                    'processing_text' => apply_filters('lankaqrwc_payment_processing_text', __('Please wait while we are processing your request...', 'lankaqr-payment-gateway-for-woocommerce')),
                     'callback_url' => add_query_arg(array('wc-api' => 'lankaqrwc-payment'), trailingslashit(get_home_url())),
                     'timeout_url' => add_query_arg(array('timeout' => 'true'), trailingslashit(wc_get_checkout_url())),
                     'cancel_url' => apply_filters('lankaqrwc_payment_cancel_url', wc_get_checkout_url(), $this->get_return_url($order), $order),
@@ -481,10 +481,10 @@ function lankaqrwc_payment_gateway_init()
             );
 
             $html = '<h6 class="lankaqr-waiting-text">';
-            $html .= __('Please wait and don\'t press back or refresh this page while we are processing your payment.', 'woocommerce-gateway-lankaqr');
+            $html .= __('Please wait and don\'t press back or refresh this page while we are processing your payment.', 'lankaqr-payment-gateway-for-woocommerce');
             $html .= '</h6>';
             $html .= '<button id="lankaqr-processing" class="btn button" disabled="disabled">';
-            $html .= __('Waiting for QR Code...', 'woocommerce-gateway-lankaqr');
+            $html .= __('Waiting for QR Code...', 'lankaqr-payment-gateway-for-woocommerce');
             $html .= '</button>';
 
             $str_array = array(
@@ -539,10 +539,10 @@ function lankaqrwc_payment_gateway_init()
             );
 
             $error_html = '<h6 class="lankaqr-waiting-text">';
-            $error_html .= __('Something went wrong...', 'woocommerce-gateway-lankaqr');
+            $error_html .= __('Something went wrong...', 'lankaqr-payment-gateway-for-woocommerce');
             $error_html .= '</h6>';
             $error_html .= '<button id="lankaqr-error-btn" class="btn button">';
-            $error_html .= __('Go back', 'woocommerce-gateway-lankaqr');
+            $error_html .= __('Go back', 'lankaqr-payment-gateway-for-woocommerce');
             $error_html .= '</button>';
 
             $qr_response = false;
@@ -592,7 +592,7 @@ function lankaqrwc_payment_gateway_init()
 
                                 <?php if (apply_filters('lankaqrwc_show_order_total', true)) { ?>
                                     <div id="lankaqr-order-total" class="lankaqr-order-total">
-                                        <?php _e('Amount to be paid:', 'woocommerce-gateway-lankaqr'); ?>
+                                        <?php _e('Amount to be paid:', 'lankaqr-payment-gateway-for-woocommerce'); ?>
                                         <span id="lankaqr-order-total-amount"><?php echo wc_price($total); ?></span>
                                     </div>
                                 <?php } ?>
@@ -601,12 +601,12 @@ function lankaqrwc_payment_gateway_init()
                                      class="lankaqr-description"><?php echo wptexturize($this->instructions); ?>
                                 </div>
                                 <div class="lankaqr-counter-content">
-                                    <strong><?php _e('Timeout in ', 'woocommerce-gateway-lankaqr'); ?></strong>
+                                    <strong><?php _e('Timeout in ', 'lankaqr-payment-gateway-for-woocommerce'); ?></strong>
                                     <div class="lankaqr-counter" id="lankaqr-timeout">-- : --</div>
                                 </div>
                                 <div class="lankaqr-buttons">
                                     <button id="lankaqr-cancel-payment"
-                                            class="btn button"><?php _e('Cancel', 'woocommerce-gateway-lankaqr'); ?></button>
+                                            class="btn button"><?php _e('Cancel', 'lankaqr-payment-gateway-for-woocommerce'); ?></button>
                                 </div>
                                 <div class="lankaqr-clear-area"></div>
                                 <div class="lankaqr-logo-footer">
@@ -647,7 +647,7 @@ function lankaqrwc_payment_gateway_init()
                 // check order if it actually needs payment
                 if (in_array($this->payment_status, apply_filters('lankaqrwc_valid_order_status_for_note', array('pending', 'on-hold')))) {
                     // set order note
-                    $order->add_order_note(sprintf(__('Payment has been completed. Need to verify against this LANKAQR Reference Number: %s then change the order status.', 'woocommerce-gateway-lankaqr'), sanitize_text_field($_POST['wc_transaction_id'])), false);
+                    $order->add_order_note(sprintf(__('Payment has been completed. Need to verify against this LANKAQR Reference Number: %s then change the order status.', 'lankaqr-payment-gateway-for-woocommerce'), sanitize_text_field($_POST['wc_transaction_id'])), false);
                 }
                 // update post meta
                 update_post_meta($order->get_id(), '_lankaqrwc_order_paid', 'yes');
@@ -658,7 +658,7 @@ function lankaqrwc_payment_gateway_init()
                 exit;
             } else {
                 // create redirect
-                $title = __('Order can\'t be found against this Order ID. If the money debited from your account, please Contact the Site Administrator or your Bank for further action.', 'woocommerce-gateway-lankaqr');
+                $title = __('Order can\'t be found against this Order ID. If the money debited from your account, please Contact the Site Administrator or your Bank for further action.', 'lankaqr-payment-gateway-for-woocommerce');
                 wp_die($title, get_bloginfo('name'));
                 exit;
             }
@@ -847,8 +847,8 @@ function lankaqrwc_payment_gateway_init()
 
                             $order->save();
 
-                            $order->add_order_note(__('Payment has been verified through the LANAKQR Push Notification service.', 'woocommerce-gateway-lankaqr'));
-                            $order->add_order_note(sprintf(__('Reference No : %s <br> Stan No : %s <br> Amount : %s', 'woocommerce-gateway-lankaqr'), sanitize_text_field($return_data['txnrrn']), sanitize_text_field($return_data['txnstan']), wc_price(sanitize_text_field($return_data['txnamount']))));
+                            $order->add_order_note(__('Payment has been verified through the LANAKQR Push Notification service.', 'lankaqr-payment-gateway-for-woocommerce'));
+                            $order->add_order_note(sprintf(__('Reference No : %s <br> Stan No : %s <br> Amount : %s', 'lankaqr-payment-gateway-for-woocommerce'), sanitize_text_field($return_data['txnrrn']), sanitize_text_field($return_data['txnstan']), wc_price(sanitize_text_field($return_data['txnamount']))));
                             $order->update_status(apply_filters('lankaqrwc_capture_payment_order_status', 'processing'));
 
                             wc_reduce_stock_levels($order->get_id());
@@ -899,7 +899,7 @@ function lankaqrwc_payment_gateway_init()
             $order = wc_get_order($order_id);
 
             if (!$order) {
-                return new WP_Error('error', __('Invalid order.', 'woocommerce-gateway-lankaqr'));
+                return new WP_Error('error', __('Invalid order.', 'lankaqr-payment-gateway-for-woocommerce'));
             }
 
             $str_array = array(
