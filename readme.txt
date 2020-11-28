@@ -101,9 +101,146 @@ Post detailed information about the issue in the [support forum](https://wordpre
 2. Checkout page
 3. QR Code Page
 
-
 == Changelog ==
 
 If you like Payment Gateway for LANKAQR on WooCommerce, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
+= 1.2.3 =
+Release Date: November 13, 2020
+
+* Fixed: Some CSS & JS issues.
+* Clean ups.
+
+= 1.2.2 =
+Release Date: October 22, 2020
+
+* Fixed: Some JS issues.
+
+= 1.2.1 =
+Release Date: October 16, 2020
+
+* Added: Merchant forced to add username and password in order to get updates from the notification API
+
+= 1.2.0 =
+Release Date: October 10, 2020
+
+* Tweak: Improved the refund process.
+
+= 1.1.9 =
+Release Date: September 29, 2020
+
+* Added: Can refund via Woocommerce
+
+= 1.1.8 =
+Release Date: September 21, 2020
+
+* Fixed: Some JS issues.
+
+= 1.1.7 =
+Release Date: September 13, 2020
+
+* Fixed: LANKAQR ID is not showing as a WooCommerce transaction ID.
+* Fixed: Some CSS & JS issues.
+* Other Improvements.
+
+= 1.1.6 =
+Release Date: September 5, 2020
+
+* Added: Option to change payment confirmation message.
+* Added: Some validations.
+
+= 1.1.5 =
+Release Date: September 5, 2020
+
+* Tweak: Added some styles on the order payment page to enhance the checkout experience.
+* Tweak: Cancel button will redirect customers to the checkout page.
+
+= 1.1.4 =
+Release Date: September 5, 2020
+
+* Tweak: Cart will be automatically cleared if payment is actually completed.
+* Fixed: 404 not found issue and other permaalinks issues.
+* WC Compatibility upto v4.2.
+
+
+= 1.1.3 =
+Release Date: September 5, 2020
+
+* NEW: Added configurable timeout duration via wp-admin
+
+= 1.1.2 =
+Release Date: September 5, 2020
+
+* NEW: Added timeout feature where the user redirects to the checkout page if inactive time has exceeded.
+
+= 1.1.1 =
+Release Date: September 5, 2020
+
+* Fixed: Some CSS & JS issues.
+
+= 1.1.0 =
+Release Date:  August 27, 2020
+
+* NEW: Can enable, disable debug in setting for better experience.
+* Fixed: Some CSS & JS issues.
+* Fixed: Button text is not working.
+
+= 1.0.9 =
+Release Date: August 23, 2020
+
+* NEW: Added automated payment confirmation without user interaction for better UX
+* Fixed: A PHP error.
+* Fixed: Wrong tooltips.
+
+= 1.0.8 =
+Release Date: August 17, 2020
+
+* Fixed: Some CSS Errors.
+* Fixed: Some typo.
+
+= 1.0.7 =
+Release Date: August 11, 2020
+
+* NEW: added extra email notification with pay link to customers.
+
+= 1.0.6 =
+Release Date: August 3, 2020
+
+* NEW: Added languages support
+
+
+= 1.0.5 =
+Release Date: July 22, 2020
+
+* Improved: Order Confirm mechanism.
+* Fixed: Dialog Box issue on Mobile devices.
+
+= 1.0.4 =
+Release Date: July 20, 2020
+
+* NEW: Major UI Changes in Payment Confirm Process.
+* Fixed: some bugs
+
+= 1.0.3 =
+Release Date: July 7, 2020
+
+* Fixed: Some CSS Errors.
+
+= 1.0.2 =
+Release Date: July 5, 2020
+
+* NEW: Can enable/disable test mode for testing
+* Fixed: Some typo.
+
+= 1.0.1 =
+Release Date: July 3, 2020
+
+* Fixed: Some CSS Errors.
+* Tested upto WordPress v5.4 and WooCommerce v4.0.
+
+
+= 1.0.0 =
+Release Date: June 30, 2020
+
+* Initial release.
 
