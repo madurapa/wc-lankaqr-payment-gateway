@@ -52,7 +52,7 @@ Like Payment Gateway for LANKAQR on WooCommerce plugin? Consider leaving a [5 st
 * NDB Bank - Not Yet
 * LB Finance - Not Yet
 * People’s Leasing & Finance - Not Yet
-(currently only commercial bank is supported and will support others upon the request)
+(currently only commercial bank supported but other bank also will be support upon the request)
 
 #### Compatibility
 * This plugin is fully compatible with WordPress V4.6+ and WooCommerce V3.5+ also compatible with any WordPress theme.
