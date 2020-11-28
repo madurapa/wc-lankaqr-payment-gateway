@@ -1,22 +1,22 @@
 <?php
 /**
- * Plugin Name: LANKAQR Payment Gateway for WooCommerce
- * Plugin URI: https://wordpress.org/plugins/lankaqr-payment-gateway-for-woocommerce/
+ * Plugin Name: Payment Gateway for LANKAQR on WooCommerce
+ * Plugin URI: https://wordpress.org/plugins/wc-lankaqr-payment-gateway/
  * Description: Accept payments through LANKAQR system which enables Quick Response (QR) code-based payments.
  * Version: 1.4.5
  * Author: Maduka Jayalath
- * Text Domain: lankaqr-payment-gateway-for-woocommerce
+ * Text Domain: wc-lankaqr-payment-gateway
  * Domain Path: /languages
  * WC requires at least: 3.1
  * WC tested up to: 4.4
  *
  *
  * @category WooCommerce
- * @package  LANKAQR Payment Gateway for WooCommerce
+ * @package  Payment Gateway for LANKAQR on WooCommerce
  * @author   Maduka Jayalath <madu.rapa@gmail.com>
  * @license  http://www.gnu.org/licenses/gpl-3.0.html
- * @link     https://wordpress.org/plugins/lankaqr-payment-gateway-for-woocommerce/
- * GitHub Plugin URI: https://github.com/madurapa/lankaqr-payment-gateway-for-woocommerce/
+ * @link     https://wordpress.org/plugins/wc-lankaqr-payment-gateway/
+ * GitHub Plugin URI: https://github.com/madurapa/wc-lankaqr-payment-gateway/
  *
  **/
 
@@ -47,7 +47,7 @@ add_action('plugins_loaded', 'lankaqrwc_plugin_load_textdomain');
  */
 function lankaqrwc_plugin_load_textdomain()
 {
-    load_plugin_textdomain('lankaqr-payment-gateway-for-woocommerce', false, dirname(LANKAQR_BASENAME) . '/languages/');
+    load_plugin_textdomain('wc-lankaqr-payment-gateway', false, dirname(LANKAQR_BASENAME) . '/languages/');
 }
 
 // register activation hook
@@ -80,7 +80,7 @@ add_filter('plugin_action_links_' . LANKAQR_BASENAME, 'lankaqrwc_add_action_link
 function lankaqrwc_add_action_links($links)
 {
     $lankaqrwclinks = array(
-        '<a href="' . admin_url('admin.php?page=wc-settings&tab=checkout&section=wc-mj-lankaqr') . '">' . __('Settings', 'lankaqr-payment-gateway-for-woocommerce') . '</a>',
+        '<a href="' . admin_url('admin.php?page=wc-settings&tab=checkout&section=wc-mj-lankaqr') . '">' . __('Settings', 'wc-lankaqr-payment-gateway') . '</a>',
     );
     return array_merge($lankaqrwclinks, $links);
 }
@@ -93,8 +93,8 @@ function lankaqrwc_plugin_meta_links($links, $file)
     $plugin = LANKAQR_BASENAME;
     if ($file == $plugin) // only for this plugin
         return array_merge($links,
-            array('<a href="https://wordpress.org/support/plugin/lankaqr-payment-gateway-for-woocommerce/" target="_blank">' . __('Support', 'lankaqr-payment-gateway-for-woocommerce') . '</a>'),
-            array('<a href="https://wordpress.org/plugins/lankaqr-payment-gateway-for-woocommerce/#faq" target="_blank">' . __('FAQ', 'lankaqr-payment-gateway-for-woocommerce') . '</a>')
+            array('<a href="https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway/" target="_blank">' . __('Support', 'wc-lankaqr-payment-gateway') . '</a>'),
+            array('<a href="https://wordpress.org/plugins/wc-lankaqr-payment-gateway/#faq" target="_blank">' . __('FAQ', 'wc-lankaqr-payment-gateway') . '</a>')
         );
     return $links;
 }
@@ -106,14 +106,14 @@ function lankaqrwc_new_plugin_install_notice()
 {
     // Show a warning to sites running PHP < 5.6
     if (version_compare(PHP_VERSION, '5.6', '<')) {
-        echo '<div class="error"><p>' . __('Your version of PHP is below the minimum version of PHP required by LANKAQR Payment Gateway for WooCommerce plugin. Please contact your host and request that your version be upgraded to 5.6 or later.', 'lankaqr-payment-gateway-for-woocommerce') . '</p></div>';
+        echo '<div class="error"><p>' . __('Your version of PHP is below the minimum version of PHP required by Payment Gateway for LANKAQR on WooCommerce plugin. Please contact your host and request that your version be upgraded to 5.6 or later.', 'wc-lankaqr-payment-gateway') . '</p></div>';
     }
 
     // Check transient, if available display notice
     if (get_transient('lankaqrwc-admin-notice-on-activation')) { ?>
         <div class="notice notice-success">
             <p>
-                <strong><?php printf(__('Thanks for installing %1$s v%2$s plugin. Click <a href="%3$s">here</a> to configure plugin settings.', 'lankaqr-payment-gateway-for-woocommerce'), 'LANKAQR Payment Gateway for WooCommerce', LANKAQR_VERSION, admin_url('admin.php?page=wc-settings&tab=checkout&section=wc-mj-lankaqr')); ?></strong>
+                <strong><?php printf(__('Thanks for installing %1$s v%2$s plugin. Click <a href="%3$s">here</a> to configure plugin settings.', 'wc-lankaqr-payment-gateway'), 'Payment Gateway for LANKAQR on WooCommerce', LANKAQR_VERSION, admin_url('admin.php?page=wc-settings&tab=checkout&section=wc-mj-lankaqr')); ?></strong>
             </p>
         </div> <?php
         delete_transient('lankaqrwc-admin-notice-on-activation');

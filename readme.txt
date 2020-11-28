@@ -1,4 +1,4 @@
-=== LANKAQR Payment Gateway for WooCommerce ===
+=== Payment Gateway for LANKAQR on WooCommerce ===
 Contributors: maduka
 Donate link:
 Tags: lankaqr, woocommerce, payment, srilanka, payment gateway, mobile wallet, mobile wallets, mobile, mobile money, mobile payment, mobile payments, ewallet, lk, ipg, lkr, rs, rupees,
@@ -9,18 +9,18 @@ Requires PHP: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-LANKAQR Payment Gateway for WooCommerce allows you to accept payments via any QR code base mobile apps to save payment gateway charges in Sri Lanka.
+Payment Gateway for LANKAQR on WooCommerce allows you to accept payments via any QR code base mobile apps to save payment gateway charges in Sri Lanka.
 
 
 == Description ==
 
-LANKAQR Payment Gateway for WooCommerce allows you to accept payments via any QR code base mobile apps to save payment gateway charges in Sri Lanka.
+Payment Gateway for LANKAQR on WooCommerce allows you to accept payments via any QR code base mobile apps to save payment gateway charges in Sri Lanka.
 
 LANKAQR is a project initiative from the Central Bank of Sri Lanka to ensure all QR codes and QR based transactions in Sri Lanka are standardized and interoperable.
 
 When this plugin is installed, a customer will see LANKAQR as a payment option. Customer can choose an app to scan the QR code and pay the required amount.
 
-Like LANKAQR Payment Gateway for WooCommerce plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/lankaqr-payment-gateway-for-woocommerce/reviews/?rate=5#new-post).
+Like Payment Gateway for LANKAQR on WooCommerce plugin? Consider leaving a [5 star review](https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway/reviews/?rate=5#new-post).
 
 #### Benefits
 
@@ -58,22 +58,22 @@ Like LANKAQR Payment Gateway for WooCommerce plugin? Consider leaving a [5 star 
 * This plugin is fully compatible with WordPress V4.6+ and WooCommerce V3.5+ also compatible with any WordPress theme.
 
 #### Support
-* Community support via the [support forum](https://wordpress.org/support/plugin/lankaqr-payment-gateway-for-woocommerce) at WordPress.org.
+* Community support via the [support forum](https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway) at WordPress.org.
 
 #### Suggestions, Features Request or Bugs Report
-* [GitHub](https://github.com/madurapa/lankaqr-payment-gateway-for-woocommerce/issues)
-* [WordPress](https://wordpress.org/support/plugin/lankaqr-payment-gateway-for-woocommerce)
+* [GitHub](https://github.com/madurapa/wc-lankaqr-payment-gateway/issues)
+* [WordPress](https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway)
 
 #### Contribute
-* Active development of this plugin is handled [on GitHub](https://github.com/madurapa/lankaqr-payment-gateway-for-woocommerce).
-* Feel free to [fork the project on GitHub](https://github.com/madurapa/lankaqr-payment-gateway-for-woocommerce) and submit your contributions via pull request.
+* Active development of this plugin is handled [on GitHub](https://github.com/madurapa/wc-lankaqr-payment-gateway).
+* Feel free to [fork the project on GitHub](https://github.com/madurapa/wc-lankaqr-payment-gateway) and submit your contributions via pull request.
 
 == Installation ==
 
 1. Visit 'Plugins > Add New'.
-1. Search for 'LANKAQR Payment Gateway for WooCommerce' and install it.
-1. Or you can upload the `lankaqr-payment-gateway-for-woocommerce` folder to the `/wp-content/plugins/` directory manually.
-1. Activate LANKAQR Payment Gateway for WooCommerce from your Plugins page.
+1. Search for 'Payment Gateway for LANKAQR on WooCommerce' and install it.
+1. Or you can upload the `wc-lankaqr-payment-gateway` folder to the `/wp-content/plugins/` directory manually.
+1. Activate Payment Gateway for LANKAQR on WooCommerce from your Plugins page.
 1. After activation go to 'WooCommerce > Settings > Payments > LANKAQR'.
 1. Enable options and save changes.
 
@@ -93,7 +93,7 @@ Yes, this plugin is compatible with any theme.
 
 = The plugin isn't working or has a bug? =
 
-Post detailed information about the issue in the [support forum](https://wordpress.org/support/plugin/lankaqr-payment-gateway-for-woocommerce) or [GitHub](https://github.com/madurapa/lankaqr-payment-gateway-for-woocommerce/issues)
+Post detailed information about the issue in the [support forum](https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway) or [GitHub](https://github.com/madurapa/wc-lankaqr-payment-gateway/issues)
 
 == Screenshots ==
 
@@ -104,6 +104,6 @@ Post detailed information about the issue in the [support forum](https://wordpre
 
 == Changelog ==
 
-If you like LANKAQR Payment Gateway for WooCommerce, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/lankaqr-payment-gateway-for-woocommerce/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
+If you like Payment Gateway for LANKAQR on WooCommerce, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
 
