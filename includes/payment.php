@@ -43,6 +43,29 @@ function lankaqrwc_payment_gateway_init()
             $this->method_description = __('Take payments via LANKAQR to your bank account directly.', 'wc-lankaqr-payment-gateway');
             $this->order_button_text = __('Generate QR Code', 'wc-lankaqr-payment-gateway');
 
+            // API endpoints
+            $this->api_url_qr_arr = [
+                0 => [
+                    0 => '',
+                    1 => ''
+                ],
+                1 => [
+                    0 => 'https://enuatqr.eftapme.com/UATCBCQRAPI/Merchant/generateSDKQRCode',
+                    1 => 'https://enqr.eftapme.com/CBCQRAPI/Merchant/generateSDKQRCode'
+                ],
+            ];
+
+            $this->api_url_refund_arr = [
+                0 => [
+                    0 => '',
+                    1 => ''
+                ],
+                1 => [
+                    0 => 'https://enuatqr.eftapme.com/UATCBCQRAPI/Merchant/qrMerRefund',
+                    1 => 'https://enqr.eftapme.com/CBCQRAPI/Merchant/qrMerRefund'
+                ],
+            ];
+
             // Method with all the options fields
             $this->init_form_fields();
 
@@ -58,8 +81,9 @@ function lankaqrwc_payment_gateway_init()
 
             $this->debug_mode = $this->get_option('debug_mode') === 'yes' ? true : false;
             $this->test_mode = $this->get_option('test_mode') === 'yes' ? true : false;
-            $this->api_url_qr = $this->test_mode ? 'https://enuatqr.eftapme.com/UATCBCQRAPI/Merchant/generateSDKQRCode' : 'https://enqr.eftapme.com/CBCQRAPI/Merchant/generateSDKQRCode';
-            $this->api_url_refund = $this->test_mode ? 'https://enuatqr.eftapme.com/UATCBCQRAPI/Merchant/qrMerRefund' : 'https://enqr.eftapme.com/CBCQRAPI/Merchant/qrMerRefund';
+            $this->api_provider = $this->get_option('api_provider');
+            $this->api_url_qr = $this->test_mode ? $this->api_url_qr_arr[$this->api_provider][0] : $this->api_url_qr_arr[$this->api_provider][1];
+            $this->api_url_refund = $this->test_mode ? $this->api_url_refund_arr[$this->api_provider][0] : $this->api_url_refund_arr[$this->api_provider][1];
 
             $this->institution_id = $this->get_option('institution_id');
             $this->channeluser_id = $this->get_option('channeluser_id');
@@ -198,7 +222,7 @@ function lankaqrwc_payment_gateway_init()
 
             $this->form_fields = array(
                 'enabled' => array(
-                    'title' => __('Enable/Disable:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Enable/Disable', 'wc-lankaqr-payment-gateway'),
                     'type' => 'checkbox',
                     'label' => __('Enable LANKAQR Payment', 'wc-lankaqr-payment-gateway'),
                     'description' => __('Enable this if you want to collect payment via LANKAQR.', 'wc-lankaqr-payment-gateway'),
@@ -206,35 +230,35 @@ function lankaqrwc_payment_gateway_init()
                     'desc_tip' => true,
                 ),
                 'title' => array(
-                    'title' => __('Title:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Title', 'wc-lankaqr-payment-gateway'),
                     'type' => 'text',
                     'description' => __('This controls the title for the payment method the customer sees during checkout.', 'wc-lankaqr-payment-gateway'),
                     'default' => __('Pay with LANKAQR', 'wc-lankaqr-payment-gateway'),
                     'desc_tip' => true,
                 ),
                 'description' => array(
-                    'title' => __('Description:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Description', 'wc-lankaqr-payment-gateway'),
                     'type' => 'textarea',
                     'description' => __('Payment method description that the customer will see on your checkout.', 'wc-lankaqr-payment-gateway'),
                     'default' => __('Make payment using LANKA QR, VISA QR or Mastercard QR', 'wc-lankaqr-payment-gateway'),
                     'desc_tip' => true,
                 ),
                 'instructions' => array(
-                    'title' => __('Instructions:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Instructions', 'wc-lankaqr-payment-gateway'),
                     'type' => 'textarea',
                     'description' => __('Instructions that will be added to the order pay page and emails.', 'wc-lankaqr-payment-gateway'),
                     'default' => __('Please scan the above QR Code with any of LANKA QR, VISA QR or MasterCard QR mobile apps before the timeout is reached. After successful payment has been made through your QR mobile app you will be redirected to the order completed page automatically.', 'wc-lankaqr-payment-gateway'),
                     'desc_tip' => true,
                 ),
                 'thank_you' => array(
-                    'title' => __('Thank You Message:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Thank You Message', 'wc-lankaqr-payment-gateway'),
                     'type' => 'textarea',
                     'description' => __('This displays a message to customer after a successful payment is made.', 'wc-lankaqr-payment-gateway'),
                     'default' => __('Thank you for your payment. Your transaction has been completed, and your order has been successfully placed. Please check you Email inbox for details. Please check your bank account statement to view transaction details.', 'wc-lankaqr-payment-gateway'),
                     'desc_tip' => true,
                 ),
                 'timeout_duration' => array(
-                    'title' => __('Timeout Duration:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Timeout Duration', 'wc-lankaqr-payment-gateway'),
                     'type' => 'select',
                     'description' => __('Change this if you think you need to give more or less time for customers to make payments. Recommended value is 3 minutes.', 'wc-lankaqr-payment-gateway'),
                     'desc_tip' => true,
@@ -251,6 +275,17 @@ function lankaqrwc_payment_gateway_init()
                     'title' => __('LANKAQR Configuration', 'wc-lankaqr-payment-gateway'),
                     'type' => 'title',
                     'description' => __('Merchants should ensure they have below listed parameters before initiating integration. These values will be provided by Bank during initiation of merchant integration / merchant configuration.', 'wc-lankaqr-payment-gateway'),
+                ),
+                'api_provider' => array(
+                    'title' => __('API Provider', 'wc-lankaqr-payment-gateway'),
+                    'type' => 'select',
+                    'description' => __('Select a bank or financial company where you got the LANKAQR API credentials.', 'wc-lankaqr-payment-gateway'),
+                    'desc_tip' => true,
+                    'default' => 0,
+                    'options' => apply_filters('lankaqrwc_settings_api_provider', array(
+                        0 => __('Please Select', 'wc-lankaqr-payment-gateway'),
+                        1 => __('Commercial Bank', 'wc-lankaqr-payment-gateway')
+                    ))
                 ),
                 'institution_id' => array(
                     'title' => __('Institution ID', 'wc-lankaqr-payment-gateway'),
@@ -354,7 +389,7 @@ function lankaqrwc_payment_gateway_init()
                     'description' => __('Enable this option if you want to send a pending order email notification to customer when they started to paying via LANKAQR.', 'wc-lankaqr-payment-gateway'),
                 ),
                 'email_enabled' => array(
-                    'title' => __('Enable/Disable:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Enable/Disable', 'wc-lankaqr-payment-gateway'),
                     'type' => 'checkbox',
                     'label' => __('Enable Additional Email Notification', 'wc-lankaqr-payment-gateway'),
                     'description' => __('Enable this option if you want to send payment link to the customer via email after started placing the order.', 'wc-lankaqr-payment-gateway'),
@@ -362,21 +397,21 @@ function lankaqrwc_payment_gateway_init()
                     'desc_tip' => true,
                 ),
                 'email_subject' => array(
-                    'title' => __('Email Subject:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Email Subject', 'wc-lankaqr-payment-gateway'),
                     'type' => 'text',
                     'desc_tip' => true,
                     'description' => sprintf(__('Available placeholders: %s', 'wc-lankaqr-payment-gateway'), '<code>' . esc_html('{site_title}, {site_address}, {order_date}, {order_number}') . '</code>'),
                     'default' => __('[{site_title}]: Payment pending #{order_number}', 'wc-lankaqr-payment-gateway'),
                 ),
                 'email_heading' => array(
-                    'title' => __('Email Heading:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Email Heading', 'wc-lankaqr-payment-gateway'),
                     'type' => 'text',
                     'desc_tip' => true,
                     'description' => sprintf(__('Available placeholders: %s', 'wc-lankaqr-payment-gateway'), '<code>' . esc_html('{site_title}, {site_address}, {order_date}, {order_number}') . '</code>'),
                     'default' => __('Thank you for your order', 'wc-lankaqr-payment-gateway'),
                 ),
                 'additional_content' => array(
-                    'title' => __('Email Body Additional Text:', 'wc-lankaqr-payment-gateway'),
+                    'title' => __('Email Body Additional Text', 'wc-lankaqr-payment-gateway'),
                     'type' => 'textarea',
                     'description' => __('This text will be attached to the On Hold email template sent to customer. Use {lanka_qr_pay_link} to add the link of payment page.', 'wc-lankaqr-payment-gateway'),
                     'default' => __('Please complete the payment via LANKAQR by clicking this link: {lanka_qr_pay_link} (ignore if already done).', 'wc-lankaqr-payment-gateway'),

@@ -3,7 +3,7 @@
  * Plugin Name: Payment Gateway for LANKAQR on WooCommerce
  * Plugin URI: https://wordpress.org/plugins/wc-lankaqr-payment-gateway/
  * Description: Accept payments through LANKAQR system which enables Quick Response (QR) code-based payments.
- * Version: 1.4.5
+ * Version: 1.2.4
  * Author: Maduka Jayalath
  * Text Domain: wc-lankaqr-payment-gateway
  * Domain Path: /languages
@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
 }
 
 $consts = array(
-    'LANKAQR_VERSION' => '1.4.5', // plugin version
+    'LANKAQR_VERSION' => '1.2.4', // plugin version
     'LANKAQR_BASENAME' => plugin_basename(__FILE__),
     'LANKAQR_DIR' => plugin_dir_url(__FILE__)
 );

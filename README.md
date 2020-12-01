@@ -88,6 +88,11 @@ Post detailed information about the issue in the [support forum](https://wordpre
 
 ### Changelog
 
+#### 1.2.4
+Release Date: December 01, 2020
+
+* Added: Multiple API providers
+
 #### 1.2.3 
 Release Date: November 13, 2020
 

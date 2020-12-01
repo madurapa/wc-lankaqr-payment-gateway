@@ -105,6 +105,11 @@ Post detailed information about the issue in the [support forum](https://wordpre
 
 If you like Payment Gateway for LANKAQR on WooCommerce, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/wc-lankaqr-payment-gateway/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
+= 1.2.4 =
+Release Date: December 01, 2020
+
+* Added: Multiple API providers
+
 = 1.2.3 =
 Release Date: November 13, 2020
 
